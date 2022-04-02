@@ -226,7 +226,7 @@ def tiny_imagenet_dataloader(batch_size=64, data_dir='./data/tiny_imagenet/', pe
                 split_line = line.split('\t')
                 val_dict[split_line[0]] = split_line[1]
 
-        paths = glob.glob('./tiny-imagenet-200/val/images/*')
+        paths = glob.glob(os.path.join(data_dir, 'val/images/*'))
         for path in paths:
             file = path.split('/')[-1]
             folder = val_dict[file]
